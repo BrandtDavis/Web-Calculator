@@ -1,0 +1,36 @@
+body {
+  background-color: #d3edf8;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 100px;
+}
+
+ul {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+li {
+  background-color: #b5b1b1;
+  display: flex;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+li img {
+  padding-top: 50px;
+  padding-left: 20px;
+}
+
+li p {
+  font-size: 34;
+  padding: 10px 10px;
+}
+
+.last {
+  border-bottom: 2px solid black;
+}

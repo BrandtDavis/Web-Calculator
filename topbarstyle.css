@@ -1,0 +1,35 @@
+.topbar table{
+  width: 100%;
+  background-color: skyblue;
+  border-collapse: collapse;
+  float: left;
+}
+
+.topbar th{
+  font-family: 'Julius Sans One', sans-serif;
+  letter-spacing: 5px;
+  text-align: center;
+  float: left;
+  vertical-align: middle;
+}
+
+.homeButton {
+  padding-left: 32px;
+}
+
+.topbar th a{
+  display: block;
+  height: 15px;
+  padding: 15px 15px;
+  text-decoration: none;
+  color: grey;
+}
+
+.topbar th a:hover{
+  color: skyblue;
+}
+
+.topbar th:hover{
+  background-color: grey;
+  cursor: pointer;
+}
