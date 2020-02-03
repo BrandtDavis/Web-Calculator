@@ -51,10 +51,15 @@ body {
   border-bottom: 4px solid black;
 }
 
+img {
+    height: 200px;
+    width: 250px;
+}
+
 p {
   color: grey;
   vertical-align: middle;
-  font-size: 26;
+  font-size: 26pt;
   font-weight: bold;
   letter-spacing: 1.5;
 }

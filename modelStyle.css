@@ -27,10 +27,24 @@ li img {
 }
 
 li p {
-  font-size: 34;
+  font-size: 28pt;
   padding: 10px 10px;
 }
 
 .last {
   border-bottom: 2px solid black;
+}
+
+.sg {
+  width: 150px;
+  height: 250px;
+}
+
+.strat {
+  width: 250px;
+}
+
+.lesPaul {
+  width: 250px;
+  height: 100px;
 }
