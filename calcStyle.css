@@ -1,0 +1,55 @@
+table {
+  background-color: grey;
+  border-spacing: 5px;
+  border: 5px solid black;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.topDisplay {
+  background-color: grey;
+  border: none;
+  text-align: right;
+  padding: 10px 10px;
+}
+
+.bottomDisplay {
+  text-align: right;
+  background-color: lightgrey;
+  border-radius: 0px;
+}
+
+input {
+  font-weight: bold;
+  font-size-adjust: none;
+  font-size: 24pt;
+  background-color: lightblue;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 15px 15px;
+  width: 100%;
+}
+
+.ce {
+  padding: 15px 0px;
+}
+
+.ans {
+  font-size: 20pt;
+  padding: 17px 0px;
+  
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width:480px){
+  table {
+    width: 100%;
+  }
+}

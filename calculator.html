@@ -1,0 +1,74 @@
+<!<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>My Calc</title>
+    <link href="calcStyle.css" rel="stylesheet">
+    <script src="calcScript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+
+      <table class="calc">
+        <tr>
+          <td colspan="4">
+            <input class="topDisplay" type="button" id="topDisplay" value="" onclick=""/>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="4">
+            <input class="bottomDisplay" type="button" id="bottomDisplay" value="0" onclick=""/>
+          </td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="leftParenth" value="(" onclick="getValues(this)"/></td>
+          <td><input type="button" id="rightParenth" value=")" onclick="getValues(this)"/></td>
+          <td colspan="2">
+            <input type="button" id="create" value="c" onclick="clearInput()"/>
+          </td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="number" value="7" onclick="getValues(this)"/></td>
+          <td><input type="button" id="number" value="8" onclick="getValues(this)"/></td>
+          <td><input type="button" id="number" value="9" onclick="getValues(this)"/></td>
+          <td><input type="button" id="operator" value="/" onclick="getValues(this)"/></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="number" value="4" onclick="getValues(this)"/></td>
+          <td><input type="button" id="number" value="5" onclick="getValues(this)"/></td>
+          <td><input type="button" id="number" value="6" onclick="getValues(this)"/></td>
+          <td><input type="button" id="operator" value="x" onclick="getValues(this)"/></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="number" value="1" onclick="getValues(this)"/></td>
+          <td><input type="button" id="number" value="2" onclick="getValues(this)"/></td>
+          <td><input type="button" id="number" value="3" onclick="getValues(this)"/></td>
+          <td><input type="button" id="operator" value="-" onclick="getValues(this)"/></td>
+        </tr>
+
+        <tr>
+          <td><input type="button" id="number" value="0" onclick="getValues(this)"/></td>
+          <td><input type="button" id="decimal" value="." onclick="getValues(this)"/></td>
+          <td><input class="ans" type="button" id="equalsButton" value="Ans" onclick="printAns()"/></td>          
+          <td><input type="button" id="operator" value="+" onclick="getValues(this)"/></td>     
+        </tr>
+
+        <tr>
+            <td colspan="2">
+              <input class="ce" type="button" id="create" value="ce" onclick="backspace()"/>
+            </td>
+            <td colspan="2">
+                <input class="equals" type="button" id="equalsButton" value="=" onclick="evaluateInput()"/>
+            </td>     
+        </tr>
+      </table>
+
+  </body>
+
+</html>
