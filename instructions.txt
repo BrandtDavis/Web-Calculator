@@ -1,0 +1,13 @@
+Name: Brandt Davis
+ID: 30019817
+Lab Section: B02
+
+URL: https://bdavis77.github.io/
+
+I tested this assignment on:
+ * Google Chrome 
+ * Mozilla Firefox
+
+To deploy my calculator you can open "index.html" with 
+a browser of your choosing, preferably Google Chrome
+or Mozilla Firefox

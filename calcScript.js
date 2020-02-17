@@ -11,12 +11,30 @@ var result = "";
 
 function getValues(element) {
   let lastEntry = inputTypes[inputTypes.length - 1];
-
+  console.log(lastEntry);
+  console.log(inputTypes);
   // Handle multiple operator entries
   if(element.id === "operator" && lastEntry === "operator"){
     inputValues.pop();
     inputValues.push(element.value);
     reprintValues("bottomDisplay");
+  }
+  else if(lastEntry === "equals") {
+    console.log("equals tiem");
+    inputValues = [];
+    inputTypes = [];
+    document.getElementById("topDisplay").value = "Ans = " + result;
+
+  }
+  else if(element.id === "operator" && lastEntry === "leftParenth"){
+    if(element.value === "-" && lastEntry === "leftParenth"){
+      inputValues.push(element.value);
+      inputTypes.push(element.id);
+      printValues("bottomDisplay");
+    }
+    else {
+      return;
+    }
   }
   // Handle decimal input
   else if(element.id === "decimal"){
@@ -109,7 +127,8 @@ function checkParentheses(element){
     return;
   }
 
-
+  // Iterate through current array and collect number of left and right parentheses
+  // and whether or not the parentheses contain anything
   for(i = 0; i < inputValues.length; i++){
     if(inputValues[i] === "("){
       leftCount++;
@@ -140,7 +159,11 @@ function checkParentheses(element){
 // Also need to clear array so that there is not previous value leftover for
 // The next entries (perhaps we clear in the getInputs() function)
 function evaluateInput() {
-  if(!inputValues.includes("=")) {
+  if(inputTypes[inputTypes.length - 1] === "leftParenth"){
+    document.getElementById("bottomDisplay").value = "Error";
+    return;
+  }
+  else if(!inputValues.includes("=")) {
     inputValues.push("=");
     inputTypes.push("equals");
     reprintValues("topDisplay");
@@ -155,6 +178,9 @@ function evaluateInput() {
       finalEquation+= "*";
       console.log(expression[i])
     }
+    else if (expression[i] === "(" && expression[i-1] === ")"){
+      finalEquation+= "*" + expression[i];
+    }
     else {
       finalEquation+=expression[i];
     }
@@ -162,16 +188,19 @@ function evaluateInput() {
   console.log(expression)
 
   result = eval(finalEquation);
+
   if(result === Infinity){
     document.getElementById("bottomDisplay").value = "Error";
   }
-  else if(result < 0){
-    document.getElementById("bottomDisplay").value = result;
-    result ="(" + result + ")";
+  else if(result === undefined){
+    document.getElementById("bottomDisplay").value = "Error";
   }
   else {
     document.getElementById("bottomDisplay").value = result;
+    result = "(" + result + ")";
   }
+  inputValues = ["="];
+  inputTypes = ["equals"]; 
 }
 
 // Reset the bottom display to '0'
@@ -221,6 +250,22 @@ function reprintValues(display) {
 
 function printAns(){
   if(result !== ""){
-    document.getElementById(display).value += result;
+    for(i = 0; i < result.length; i++){
+      console.log(result[i]);
+      if(result[i] === "("){
+        inputTypes.push("leftParenth");
+      }
+      else if(result[i] === ")"){
+        inputTypes.push("rightParenth");
+      }
+      else if(result[i] === "-"){
+        inputTypes.push("operator");
+      }
+      else if(result[i] < 0 || result[i] > 0){
+        inputTypes.push("number")
+      }
+    }
+    inputValues.push(result[i]);
+    document.getElementById("bottomDisplay").value += result;
   }
 }
